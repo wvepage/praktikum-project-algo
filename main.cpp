@@ -217,4 +217,88 @@ int main() {
     return 0;
 }
 
+void tukarData(Koleksi* a, Koleksi* b) {
+    swap(a->judul, b->judul);
+    swap(a->penulis, b->penulis);
+    swap(a->kategori, b->kategori);
+    swap(a->tahunTerbit, b->tahunTerbit);
+    swap(a->rating, b->rating);
+}
+
+void urutkanKoleksi() {
+    if (head == NULL || head->next == NULL) return;
+
+    bersihkanLayar();
+    cetakGarisGanda();
+    cout << "  URUTKAN RAK BUKU\n";
+    cetakGarisGanda();
+    cout << "1. Berdasarkan Abjad Judul (A-Z)\n";
+    cout << "2. Berdasarkan Tahun Terbit (Terbaru)\n";
+    cout << "3. Berdasarkan Rating (Tertinggi)\n";
+    cout << "Pilih kriteria: ";
+    
+    int kriteria;
+    cin >> kriteria;
+
+    bool ditukar;
+    Koleksi* ptr1;
+    Koleksi* lptr = NULL;
+
+    // Algoritma Bubble Sort
+    do {
+        ditukar = false;
+        ptr1 = head;
+
+        while (ptr1->next != lptr) {
+            bool kondisiTukar = false;
+            if (kriteria == 1 && ptr1->judul > ptr1->next->judul) kondisiTukar = true;
+            else if (kriteria == 2 && ptr1->tahunTerbit < ptr1->next->tahunTerbit) kondisiTukar = true;
+            else if (kriteria == 3 && ptr1->rating < ptr1->next->rating) kondisiTukar = true;
+
+            if (kondisiTukar) {
+                tukarData(ptr1, ptr1->next);
+                ditukar = true;
+            }
+            ptr1 = ptr1->next;
+        }
+        lptr = ptr1;
+    } while (ditukar);
+
+    cout << "\n[!] Rak berhasil dirapikan!\n";
+    tekanEnter();
+}
+
+void cariKoleksi() {
+    bersihkanLayar();
+    cetakGarisGanda();
+    cout << "  CARI KOLEKSI BUKU/NOVEL\n";
+    cetakGarisGanda();
+
+    string target;
+    cout << "Masukkan Judul yang dicari: ";
+    cin >> ws; getline(cin, target);
+
+    Koleksi* bantu = head;
+    bool ketemu = false;
+
+    // Algoritma Sequential Search
+    while (bantu != NULL) {
+        if (bantu->judul == target) {
+            cout << "\n[!] Data Ditemukan!\n";
+            cetakGarisTabel();
+            cout << "| " << left << setw(28) << bantu->judul.substr(0, 28)
+                << " | " << setw(20) << bantu->penulis.substr(0, 20)
+                << " | " << setw(8) << bantu->kategori
+                << " | " << setw(6) << bantu->tahunTerbit
+                << " | " << setw(11) << fixed << setprecision(1) << bantu->rating << " |\n";
+            cetakGarisTabel();
+            ketemu = true;
+            break;
+        }
+        bantu = bantu->next;
+    }
+
+    if (!ketemu) cout << "\n[!] Literatur tidak ditemukan di dalam rak.\n";
+    tekanEnter();
+}
 
