@@ -1,7 +1,7 @@
 # Praktikum Algoritma & Struktur Data || Projek Final  
 
 <div align="center">
-  <p>─ <i>Sistem Katalog Buku & Novel</i> ─</p>
+  <p>─ <i>Sistem Pengelolaan Koleksi Katalog Buku & Novel Pribadi</i> ─</p>
 </div>
 
 ### ★ CONTRIBUTORS
