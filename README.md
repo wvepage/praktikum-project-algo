@@ -5,6 +5,6 @@
 </div>
 
 ### ★ CONTRIBUTORS
-#### TEAM SI-D
+TEAM SI-D
 * **Bintang Fergiawan** - 124250143
 * **Yunita Rachmawati** - 124250151
