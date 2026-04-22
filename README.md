@@ -1,4 +1,4 @@
-# Projek Final | Praktikum Algoritma & Struktur Data
+# Praktikum Algoritma & Struktur Data || Projek Final  
 
 <div align="center">
   <p>─ <i>Sistem Katalog Buku & Novel</i> ─</p>
