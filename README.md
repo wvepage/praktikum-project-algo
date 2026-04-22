@@ -1,4 +1,6 @@
-# Praktikum Algoritma & Struktur Data || Projek Final  
+<div align="center">
+  # Praktikum Algoritma & Struktur Data || Projek Final  
+</div>
 
 <div align="center">
   <p>─ <i>Sistem Pengelolaan Koleksi Katalog Buku & Novel Pribadi</i> ─</p>
