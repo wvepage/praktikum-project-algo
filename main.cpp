@@ -178,45 +178,6 @@ void tampilkanRak(string filter) {
     tekanEnter();
 }
 
-int main() {
-    muatDataDariFile();   // Muat data awal dari file .txt
-
-    int pilihan;
-    do {
-        bersihkanLayar();
-        cetakGarisGanda();
-        cout << "      SISTEM PENGELOLAAN KOLEKSI BUKU & NOVEL PRIBADI\n";
-        cetakGarisGanda();
-        cout << "	[1] Tambah Koleksi Baru\n";
-        cout << "	[2] Tampilkan Semua Koleksi\n";
-        cout << "	[3] Tampilkan Khusus Novel\n";
-        cout << "	[4] Tampilkan Khusus Buku\n";
-        cout << "	[5] Urutkan Rak (Sorting)\n";
-        cout << "	[6] Cari Koleksi (Searching)\n";
-        cout << "	[0] Simpan & Keluar\n";
-        cetakGarisGanda();
-        cout << ">> Masukkan pilihan: ";
-        cin >> pilihan;
-
-        switch (pilihan) {
-            case 1: tambahKoleksi(); break;
-            case 2: tampilkanRak("Semua"); break;
-            case 3: tampilkanRak("Novel"); break;
-            case 4: tampilkanRak("Buku"); break;
-            case 0:
-                cout << "\n[!] Menyimpan data...";
-                cout << "\nTerimakasih.. Sampai Jumpa!\n";
-                simpanDataKeFile();
-                break;
-            default:
-                cout << "\n[!] Pilihan tidak valid!\n";
-                tekanEnter();
-         }
-    } while (pilihan != 0);
-
-    return 0;
-}
-
 void tukarData(Koleksi* a, Koleksi* b) {
     swap(a->judul, b->judul);
     swap(a->penulis, b->penulis);
@@ -302,3 +263,41 @@ void cariKoleksi() {
     tekanEnter();
 }
 
+int main() {
+    muatDataDariFile();   // Muat data awal dari file .txt
+
+    int pilihan;
+    do {
+        bersihkanLayar();
+        cetakGarisGanda();
+        cout << "      SISTEM PENGELOLAAN KOLEKSI BUKU & NOVEL PRIBADI\n";
+        cetakGarisGanda();
+        cout << "	[1] Tambah Koleksi Baru\n";
+        cout << "	[2] Tampilkan Semua Koleksi\n";
+        cout << "	[3] Tampilkan Khusus Novel\n";
+        cout << "	[4] Tampilkan Khusus Buku\n";
+        cout << "	[5] Urutkan Rak (Sorting)\n";
+        cout << "	[6] Cari Koleksi (Searching)\n";
+        cout << "	[0] Simpan & Keluar\n";
+        cetakGarisGanda();
+        cout << ">> Masukkan pilihan: ";
+        cin >> pilihan;
+
+        switch (pilihan) {
+            case 1: tambahKoleksi(); break;
+            case 2: tampilkanRak("Semua"); break;
+            case 3: tampilkanRak("Novel"); break;
+            case 4: tampilkanRak("Buku"); break;
+            case 0:
+                cout << "\n[!] Menyimpan data...";
+                cout << "\nTerimakasih.. Sampai Jumpa!\n";
+                simpanDataKeFile();
+                break;
+            default:
+                cout << "\n[!] Pilihan tidak valid!\n";
+                tekanEnter();
+         }
+    } while (pilihan != 0);
+
+    return 0;
+}
