@@ -288,15 +288,16 @@ int main() {
             case 2: tampilkanRak("Semua"); break;
             case 3: tampilkanRak("Novel"); break;
             case 4: tampilkanRak("Buku"); break;
+            case 5: urutkanKoleksi(); break;
+            case 6: cariKoleksi(); break;
             case 0:
-                cout << "\n[!] Menyimpan data...";
-                cout << "\nTerimakasih.. Sampai Jumpa!\n";
+                cout << "\nMenyimpan data... Sampai jumpa!\n";
                 simpanDataKeFile();
                 break;
             default:
                 cout << "\n[!] Pilihan tidak valid!\n";
                 tekanEnter();
-         }
+        }
     } while (pilihan != 0);
 
     return 0;
