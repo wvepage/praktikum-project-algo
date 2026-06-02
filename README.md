@@ -23,8 +23,6 @@ Sistem dirancang dengan memanfaatkan berbagai struktur data dan algoritma fundam
 
 ## 🔬 Implementasi Materi Praktikum
 
-Berdasarkan batasan materi praktikum, berikut adalah identifikasi dan penjelasan konsep yang terkandung di dalam program ini:
-
 ### 1. Pointer dan Struct (Modul I)
 Materi alokasi memori dinamis dan variabel penunjuk alamat diimplementasikan pada:
 *   **Deklarasi Tipe Data Bentukan:** `struct Koleksi` digunakan untuk membungkus karakteristik objek buku/novel (judul, penulis, kategori, tahun, rating).
