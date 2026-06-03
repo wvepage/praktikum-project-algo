@@ -187,19 +187,39 @@ void tukarData(Koleksi* a, Koleksi* b) {
 }
 
 void urutkanKoleksi() {
-    if (head == NULL || head->next == NULL) return;
+    if (head == NULL) {
+        cout << "\n[!] Rak masih kosong.\n";
+        tekanEnter();
+        return;
+    }
+    if (head->next == NULL) {
+        cout << "\n[!] Koleksi hanya satu, tidak perlu diurutkan.\n";
+        tekanEnter();
+        return;
+    }
 
-    bersihkanLayar();
-    cetakGarisGanda();
-    cout << "  URUTKAN RAK BUKU\n";
-    cetakGarisGanda();
-    cout << "1. Berdasarkan Abjad Judul (A-Z)\n";
-    cout << "2. Berdasarkan Tahun Terbit (Terbaru)\n";
-    cout << "3. Berdasarkan Rating (Tertinggi)\n";
-    cout << "Pilih kriteria: ";
-    
     int kriteria;
-    cin >> kriteria;
+    do {
+        bersihkanLayar();
+        cetakGarisGanda();
+        cout << "  URUTKAN RAK BUKU\n";
+        cetakGarisGanda();
+        cout << "1. Berdasarkan Abjad Judul (A-Z)\n";
+        cout << "2. Berdasarkan Tahun Terbit (Terbaru)\n";
+        cout << "3. Berdasarkan Rating (Tertinggi)\n";
+        cout << "Pilih kriteria (1-3): ";
+        
+        if (!(cin >> kriteria)) {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            kriteria = -1;
+        }
+
+        if (kriteria < 1 || kriteria > 3) {
+            cout << "\n[!] Pilihan tidak valid! Masukkan angka 1, 2, atau 3.\n";
+            tekanEnter();
+        }
+    } while (kriteria < 1 || kriteria > 3);
 
     bool ditukar;
     Koleksi* ptr1;
